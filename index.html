@@ -23,12 +23,17 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/styles.css" rel="stylesheet">
-    <title>Portafolio Christian Sapón</title>
+    <title>Inicio</title>
 </head>
 <body>
     
     <div>        
         <!--Video Modal Start-->
+        <button type="button" class="btn-play" data-toggle="modal" 
+            data-src="https://www.youtube.com/embed/N2rEfyDcFR8" 
+            data-target="#videoModal">
+            <span></span> Ver Short
+        </button>
         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -36,10 +41,8 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>        
-                        <!-- 16:9 aspect ratio -->
                         <div class="embed-responsive embed-responsive-16by9">
-                            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Brovv5xexbU?si=D16yk9UuRDgaBG6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/TEDwSzsdZ-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allow="autoplay"></iframe>
                         </div>
                     </div>
                 </div>

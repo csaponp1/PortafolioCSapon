@@ -37,21 +37,23 @@
 
     //Modal Video
     $(document).ready(function(){
-        var $videoSrc;
-        $('.btn-play').click(function(){
-            $videoSrc = $(this).data("src");
+            var $videoSrc;
+            
+            $('.btn-play').click(function(){
+                // Captura la URL del botón
+                $videoSrc = $(this).data("src");
+            });
+
+            $('#videoModal').on('shown.bs.modal', function (e){
+                // Agregamos mute=1 para evitar el "Error de configuración" (Error 153)
+                $("#video").attr('src', $videoSrc + "?autoplay=1&mute=1&modestbranding=1&showinfo=0");
+            });
+
+            $('#videoModal').on('hide.bs.modal', function (e){
+                // Al cerrar, vaciamos el src por completo para detener el video
+                $("#video").attr('src', "");
+            });
         });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e){
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e){
-            $("#video").attr('src', $videoSrc);
-        })
-    });
 
     //Scroll to Bottom
     $(window).scroll(function(){
